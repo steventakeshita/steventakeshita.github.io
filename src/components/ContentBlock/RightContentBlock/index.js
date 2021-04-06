@@ -27,6 +27,7 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
                   typeof button === "object" &&
                   button.map((item, id) => {
                     return (
+                      // TODO: Add the "add your email option with connection to firebase"
                       <Button
                         key={id}
                         color={item.color}
