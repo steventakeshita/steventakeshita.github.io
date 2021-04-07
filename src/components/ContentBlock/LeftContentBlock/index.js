@@ -1,4 +1,4 @@
-import { Row, Col } from "antd";
+import { Row, Col, Image } from "antd";
 import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
 
@@ -10,14 +10,12 @@ const LeftContentBlock = ({ icon, title, content, subTitle, subContent, section,
   return (
     <S.LeftContentBlock>
       <Row type="flex" justify="space-between" align="middle" id={id}>
-        <Col lg={11} md={11} sm={12} xs={24}>
+        <Col lg={13} md={13} sm={13} xs={24}>
           <Slide left>
-            <SvgIcon
-              src={icon}
-              className="about-block-image"
-              width="100%"
-              height="100%"
-            />
+            <Image
+              src={`/img/svg/${icon}`}
+              preview={false}>
+            </Image>
           </Slide>
         </Col>
         <Col lg={11} md={11} sm={11} xs={24}>

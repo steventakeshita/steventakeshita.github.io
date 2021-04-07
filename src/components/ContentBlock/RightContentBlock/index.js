@@ -1,4 +1,4 @@
-import { Row, Col } from "antd";
+import { Row, Col, Image } from "antd";
 import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
 
@@ -42,14 +42,12 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
             </S.ContentWrapper>
           </Slide>
         </Col>
-        <Col lg={11} md={11} sm={12} xs={24}>
+        <Col lg={13} md={13} sm={13} xs={24}>
           <Slide right>
-            <SvgIcon
-              src={icon}
-              className="about-block-image"
-              width="100%"
-              height="100%"
-            />
+            <Image
+              src={`/img/svg/${icon}`}
+              preview={false}>
+            </Image>
           </Slide>
         </Col>
       </Row>
