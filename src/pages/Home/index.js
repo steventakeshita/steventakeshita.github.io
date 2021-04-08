@@ -24,7 +24,6 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="LetsGetStartediPhone.png"
         id="intro"
       />
       <LeftContentBlock
@@ -34,7 +33,6 @@ const Home = () => {
         subTitle={AboutContent.subTitle}
         subContent={AboutContent.subText}
         section={AboutContent.section}
-        icon="SavingsAllocationiPhone.png"
         id="about"
       />
 

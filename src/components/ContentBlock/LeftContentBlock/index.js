@@ -5,6 +5,7 @@ import Slide from "react-reveal/Slide";
 import SvgIcon from "../../../common/SvgIcon";
 
 import * as S from "./styles";
+import image from "./SavingsAllocationiPhone.png"
 
 const LeftContentBlock = ({ icon, title, content, subTitle, subContent, section, t, id }) => {
   return (
@@ -13,7 +14,7 @@ const LeftContentBlock = ({ icon, title, content, subTitle, subContent, section,
         <Col lg={13} md={13} sm={13} xs={24}>
           <Slide left>
             <Image
-              src={`/img/svg/${icon}`}
+              src={image}
               preview={false}>
             </Image>
           </Slide>

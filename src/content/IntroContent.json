@@ -1,9 +1,8 @@
 {
   "title": "Everyone should have access to quality financial advice for an affordable price.",
   "text": "Percy helps you budget, allocate your savings, and invest for only $10/month.",
-  "button": [
+  "button": 
     {
       "title": "Count Me In!"
     }
-  ]
 }
