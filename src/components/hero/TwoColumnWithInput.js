@@ -66,51 +66,73 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-function saveToFirebase(email) {
-  var emailObject = {
-      email: email
-  };
 
-  firebase.database().ref('signups').push().set(emailObject)
-      .then(function(snapshot) {
+class Hero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: '', didSignUp: false };
+    this.handleChange = this.handleChange.bind(this);
+    this.saveToFirebase = this.saveToFirebase.bind(this);
+  }
+
+  saveToFirebase(email) {
+    var emailObject = {
+        email: email
+    };
+  
+    firebase.database().ref('signups').push().set(emailObject)
+        .then((snapshot) => {
+          this.setState({didSignUp: true });
           // success(); // some success method
-      }, function(error) {
-          console.log('error' + error);
-          // error(); // some error method
-      });
-}
+        }, function(error) {
+            console.log('error' + error);
+            // error(); // some error method
+        });
+  }
 
-export default ({ roundedHeaderButton }) => {
-  return (
-    <>
-      <Header roundedHeaderButton={roundedHeaderButton} />
-      <Container>
-        <TwoColumn>
-          <LeftColumn>
-            <Heading>
-              Everyone should have access to quality financial advice for an affordable price
-            </Heading>
-            <Paragraph>
-              Percy helps you budget, allocate your savings, and invest for only $10/month
-            </Paragraph>
-            <Actions>
-              <input type="text" placeholder="Your E-mail Address" />
-              <button onClick={() => saveToFirebase("steven@gmail.com")}>Count Me In!</button>
-            </Actions>
-            {/* TODO: Add customers here: looks pretty cool */}
-            {/* <CustomersLogoStrip>
-              <p>Our TRUSTED Customers</p>
-              <img src={CustomersLogoStripImage} alt="Our Customers" />
-            </CustomersLogoStrip> */}
-          </LeftColumn>
-          <RightColumn>
-            <IllustrationContainer>
-              <img tw="min-w-0 w-full max-w-lg xl:max-w-3xl" src={DesignIllustration} alt="Design Illustration" />
-            </IllustrationContainer>
-          </RightColumn>
-        </TwoColumn>
-        <DecoratorBlob1 />
-      </Container>
-    </>
-  );
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  render() {
+  
+    return (
+      <>
+        <Header  />
+        <Container>
+          <TwoColumn>
+            <LeftColumn>
+              <Heading>
+                Everyone should have access to quality financial advice for an affordable price
+              </Heading>
+              <Paragraph>
+                Percy helps you budget, allocate your savings, and invest for only $10/month
+              </Paragraph>
+              {this.state.didSignUp
+              ? (
+                <Paragraph>
+                Thank you for signing up!
+              </Paragraph>
+              )
+              : (
+              <Actions>
+                <input onChange={this.handleChange} type="text" placeholder="Your E-mail Address" />
+                <button onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
+              </Actions>
+              )}
+              
+            </LeftColumn>
+            <RightColumn>
+              <IllustrationContainer>
+                <img tw="min-w-0 w-full max-w-lg xl:max-w-3xl" src={DesignIllustration} alt="Design Illustration" />
+              </IllustrationContainer>
+            </RightColumn>
+          </TwoColumn>
+          <DecoratorBlob1 />
+        </Container>
+      </>
+     );
+  }
 };
+
+export default Hero
