@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.f8fd3397.chunk.css",
-    "main.js": "/static/js/main.af65f303.chunk.js",
-    "main.js.map": "/static/js/main.af65f303.chunk.js.map",
+    "main.js": "/static/js/main.12114c53.chunk.js",
+    "main.js.map": "/static/js/main.12114c53.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cbbb42e2.js",
     "runtime-main.js.map": "/static/js/runtime-main.cbbb42e2.js.map",
     "static/css/2.0f726087.chunk.css": "/static/css/2.0f726087.chunk.css",
-    "static/js/2.d1e6c729.chunk.js": "/static/js/2.d1e6c729.chunk.js",
-    "static/js/2.d1e6c729.chunk.js.map": "/static/js/2.d1e6c729.chunk.js.map",
+    "static/js/2.214f572f.chunk.js": "/static/js/2.214f572f.chunk.js",
+    "static/js/2.214f572f.chunk.js.map": "/static/js/2.214f572f.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.30fc5ad90a4ff3a3c17ea213ebbba9aa.js": "/precache-manifest.30fc5ad90a4ff3a3c17ea213ebbba9aa.js",
+    "precache-manifest.7eeed4edc6d9d883076262e4a574b6f7.js": "/precache-manifest.7eeed4edc6d9d883076262e4a574b6f7.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.0f726087.chunk.css.map": "/static/css/2.0f726087.chunk.css.map",
     "static/css/main.f8fd3397.chunk.css.map": "/static/css/main.f8fd3397.chunk.css.map",
-    "static/js/2.d1e6c729.chunk.js.LICENSE.txt": "/static/js/2.d1e6c729.chunk.js.LICENSE.txt",
+    "static/js/2.214f572f.chunk.js.LICENSE.txt": "/static/js/2.214f572f.chunk.js.LICENSE.txt",
     "static/media/AboutUsPage.jpeg": "/static/media/AboutUsPage.3722f7e7.jpeg",
     "static/media/AgencyLandingPage.jpeg": "/static/media/AgencyLandingPage.df4fcdeb.jpeg",
     "static/media/BlogIndexPage.jpeg": "/static/media/BlogIndexPage.7e8818a2.jpeg",
@@ -21,7 +21,7 @@
     "static/media/EventLandingPage.jpeg": "/static/media/EventLandingPage.7d7ae3a6.jpeg",
     "static/media/HostingCloudLandingPage.jpeg": "/static/media/HostingCloudLandingPage.29cc9383.jpeg",
     "static/media/HotelTravelLandingPage.jpeg": "/static/media/HotelTravelLandingPage.4fde2dfb.jpeg",
-    "static/media/LetsGetStartediPhone.png": "/static/media/LetsGetStartediPhone.e4e387f2.png",
+    "static/media/LetsGetStartediPhone.png": "/static/media/LetsGetStartediPhone.eee41b40.png",
     "static/media/LoginPage.jpeg": "/static/media/LoginPage.d5a48afb.jpeg",
     "static/media/MainLandingPageHero.png": "/static/media/MainLandingPageHero.198e3c8d.png",
     "static/media/PercyLogoWhite.png": "/static/media/PercyLogoWhite.c47de400.png",
@@ -29,7 +29,7 @@
     "static/media/PrivacyPolicyPage.jpeg": "/static/media/PrivacyPolicyPage.60bc4cc1.jpeg",
     "static/media/RestaurantLandingPage.jpeg": "/static/media/RestaurantLandingPage.b747f875.jpeg",
     "static/media/SaaSProductLandingPage.jpeg": "/static/media/SaaSProductLandingPage.bea0b53c.jpeg",
-    "static/media/SavingsAllocationiPhone.png": "/static/media/SavingsAllocationiPhone.37161740.png",
+    "static/media/SavingsAllocationiPhone.png": "/static/media/SavingsAllocationiPhone.a3be272a.png",
     "static/media/ServiceLandingPage.jpeg": "/static/media/ServiceLandingPage.41a344b7.jpeg",
     "static/media/SignupPage.jpeg": "/static/media/SignupPage.1cecad52.jpeg",
     "static/media/TermsOfServicePage.jpeg": "/static/media/TermsOfServicePage.15d07b59.jpeg",
@@ -108,8 +108,8 @@
   "entrypoints": [
     "static/js/runtime-main.cbbb42e2.js",
     "static/css/2.0f726087.chunk.css",
-    "static/js/2.d1e6c729.chunk.js",
+    "static/js/2.214f572f.chunk.js",
     "static/css/main.f8fd3397.chunk.css",
-    "static/js/main.af65f303.chunk.js"
+    "static/js/main.12114c53.chunk.js"
   ]
 }
