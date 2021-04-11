@@ -19,7 +19,7 @@ import { ReactComponent as BriefcaseIcon } from "feather-icons/dist/icons/briefc
 import { ReactComponent as MoneyIcon } from "feather-icons/dist/icons/dollar-sign.svg";
 
 export default () => {
-  const Subheading = tw.span`uppercase tracking-widest font-bold text-primary-500`;
+  // const Subheading = tw.span`tracking-widest text-base`;
   const HighlightedText = tw.span`text-primary-500`;
 
   return (
@@ -31,16 +31,16 @@ export default () => {
       <FeatureWithSteps
         heading1={
           <>
-            Expensive financial advisors charge over $300/month
+            The average financial advisor charges over $200/month
           </>
         }
-        subheading1={<Subheading>For that amount of money, you would expect VIP treatment. The reality is that financial advisors relay advice that’s generated from ancient software.</Subheading>}
+        subheading1={"We think that’s too expensive! It’s no wonder less than 3 in 10 Americans have a financial advisor. What’s worse is for $200/month, you would expect the VIP treatment. The reality is that financial advisors rely heavily on software and are often just relaying the software’s suggestions to you."}
         heading2={
           <>
             Percy cuts out the middleman
           </>
         }
-        subheading2={<Subheading>By delivering advice directly, we take the cost out of financial planning, and pass those savings on to you!</Subheading>}
+        subheading2={"By delivering advice to you directly through our software, we take the cost out of financial planning, and pass those savings on to you. Unlike the ancient software that’s made for advisors, our platform is easy for you to understand and use."}
         textOnLeft={false}
         imageSrc={macHeroScreenshotImageSrc}
         imageDecoratorBlob={true}

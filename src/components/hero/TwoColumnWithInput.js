@@ -21,19 +21,20 @@ const LeftColumn = tw.div`relative lg:w-5/12 text-center max-w-lg mx-auto lg:max
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex-1 flex flex-col justify-center lg:self-end`;
 
 const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`;
-const Paragraph = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
+const Subheading = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
+const SignupText = tw.p`my-3 text-sm text-gray-500 xl:text-base`;
 
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
   input {
-    ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
+    ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-md border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
   }
   button {
-    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
+    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-md py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
   }
 `;
 
-const IllustrationContainer = tw.div`flex justify-center lg:justify-end items-center`;
+const IllustrationContainer = tw.div`flex justify-center items-center`;
 
 // Random Decorator Blobs (shapes that you see in background)
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
@@ -103,20 +104,24 @@ class Hero extends React.Component {
           <TwoColumn>
             <LeftColumn>
               <Heading>
-                Everyone should have access to quality financial advice for an affordable price
+                Helping you expertly manage your finances.
               </Heading>
-              <Paragraph>
-                Percy helps you budget, allocate your savings, and invest for only $10/month
-              </Paragraph>
+              <Subheading>
+                Percy advises you on budgeting, allocating your savings, investing, taxes, and more for only $10/month - over 20 times cheaper than the average financial advisor!
+              </Subheading>
+              <SignupText>
+                We’re currently in beta. Sign up to get early access.
+              </SignupText>
+
               {this.state.didSignUp
               ? (
-                <Paragraph>
+              <Subheading>
                 Thank you for signing up!
-              </Paragraph>
+              </Subheading>
               )
               : (
               <Actions>
-                <input onChange={this.handleChange} type="text" placeholder="Your E-mail Address" />
+                <input onChange={this.handleChange} type="text" placeholder="Your email address" />
                 <button onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
               </Actions>
               )}
@@ -124,7 +129,7 @@ class Hero extends React.Component {
             </LeftColumn>
             <RightColumn>
               <IllustrationContainer>
-                <img tw="min-w-0 w-full max-w-lg xl:max-w-3xl" src={DesignIllustration} alt="Design Illustration" />
+                <img tw="h-144" src={DesignIllustration} alt="Design Illustration" />
               </IllustrationContainer>
             </RightColumn>
           </TwoColumn>
