@@ -11,13 +11,13 @@ import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-7
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-8.svg";
 
 const Subheading = tw(SubheadingBase)`mb-4 text-center`;
-const Heading = tw(SectionHeading)`w-full`;
+const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl text-gray-900 leading-tight`
 const Description = tw(SectionDescription)`w-full text-center`;
 
 const Column = tw.div`flex flex-col items-center`;
 const HeaderContent = tw.div``;
 
-const FAQSContainer = tw.dl`mt-12 max-w-4xl relative`;
+const FAQSContainer = tw.dl`mt-8 max-w-screen-lg relative`;
 const FAQ = tw.div`cursor-pointer select-none mt-5 px-8 sm:px-10 py-5 sm:py-4 rounded-lg text-gray-800 hover:text-gray-900 bg-gray-200 hover:bg-gray-300 transition duration-300`;
 const Question = tw.dt`flex justify-between items-center`;
 const QuestionText = tw.span`text-lg lg:text-xl font-semibold`;

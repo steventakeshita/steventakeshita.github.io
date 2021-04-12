@@ -34,7 +34,7 @@ export default () => {
             It's time to democratize financial advice.
           </>
         }
-        subheading1={"While most people want help with their finances, only 3 in 10 Americans have a financial advisor. What gives? The average financial advisor charges over $200/month! But it gets worse. For $200/month, you would expect the VIP treatment. The reality is that financial advisors rely heavily on software and are often just relaying the software’s suggestions to you."}
+        subheading1={"While most people want help with their finances, only 3 in 10 Americans have a financial advisor. What gives? The average financial advisor charges over $200/month! But it gets worse. For $200/month, you would expect VIP treatment. The reality is that financial advisors rely heavily on software and are often just relaying the software’s suggestions to you."}
         heading2={
           <>
             Let's cut out the middleman.
@@ -52,14 +52,14 @@ export default () => {
         // subheading={<Subheading>Features</Subheading>}
         heading={
           <>
-            Percy optimizes your financial life
+            Percy optimizes your financial life.
           </>
         }
       />
       <FAQ
         heading={
           <>
-            FAQ
+            Frequently asked questions
           </>
         }
         faqs={[

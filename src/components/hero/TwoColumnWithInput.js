@@ -17,12 +17,12 @@ import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-5 md:py-5`;
-const LeftColumn = tw.div`relative lg:w-5/12 text-left max-w-lg mx-auto lg:max-w-none`;
-const RightColumn = tw.div`relative mt-12 lg:mt-0 flex-1 flex flex-col justify-center lg:self-end`;
+const LeftColumn = tw.div`relative justify-center max-w-screen-md lg:w-1/2 text-left mx-auto`;
+const RightColumn = tw.div`relative mt-12 lg:w-1/2 lg:mt-0 flex-1 flex flex-col justify-center`;
 
 const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`;
 const Subheading = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
-const SignupText = tw.p`my-3 text-sm text-gray-500 xl:text-base`;
+const SignupText = tw.p`my-3 text-gray-500 text-base`;
 
 const Actions = styled.div`
   ${tw`relative max-w-md lg:mx-0`}
