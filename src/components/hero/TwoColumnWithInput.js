@@ -17,7 +17,7 @@ import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-5 md:py-5`;
-const LeftColumn = tw.div`relative lg:w-5/12 text-center max-w-lg mx-auto lg:max-w-none lg:text-left`;
+const LeftColumn = tw.div`relative lg:w-5/12 text-left max-w-lg mx-auto lg:max-w-none`;
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex-1 flex flex-col justify-center lg:self-end`;
 
 const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`;
@@ -25,9 +25,9 @@ const Subheading = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
 const SignupText = tw.p`my-3 text-sm text-gray-500 xl:text-base`;
 
 const Actions = styled.div`
-  ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
+  ${tw`relative max-w-md lg:mx-0`}
   input {
-    ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-md border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
+    ${tw`sm:pr-48 pl-4 py-4 sm:py-5 rounded-md border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
   }
   button {
     ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-md py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
@@ -115,7 +115,7 @@ class Hero extends React.Component {
                 Helping you expertly manage your finances.
               </Heading>
               <Subheading>
-                Percy advises you on budgeting, allocating your savings, investing, taxes, and more for only $10/month - over 20 times cheaper than the average financial advisor!
+                Percy advises you on budgeting, allocating your savings, investing, taxes, and more for only $19/month - over 10 times cheaper than the average financial advisor!
               </Subheading>
               <SignupText>
                 We’re currently in beta. Sign up to get early access.

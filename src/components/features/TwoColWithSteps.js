@@ -12,7 +12,7 @@ const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
 const ImageColumn = tw(Column)`md:w-6/12 flex-shrink-0 relative`;
 const TextColumn = styled(Column)(props => [
   tw`md:w-6/12 mt-16 md:mt-0`,
-  props.textOnLeft ? tw`md:mr-12 lg:mr-16 md:order-first` : tw`md:ml-12 lg:ml-16 md:order-last`
+  props.textOnLeft ? tw`md:mr-12 lg:mr-16 md:order-first` : tw`md:ml-12 lg:ml-16 order-first md:order-last`
 ]);
 
 const Image = tw.img`h-144`;
@@ -21,7 +21,7 @@ const DecoratorBlob = styled(SvgDotPattern)(() => [
   tw`w-20 h-20 absolute right-0 bottom-0 transform translate-x-1/2 translate-y-1/2 fill-current text-primary-500 -z-10`
 ]);
 
-const TextContent = tw.div`lg:py-8 text-center md:text-left`;
+const TextContent = tw.div`lg:py-8 text-left`;
 
 // OLD STYLE:
 // const Subheading = tw(SubheadingBase)`text-center md:text-left`;

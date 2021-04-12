@@ -37,20 +37,20 @@ const Description = tw(SectionDescription)`w-full text-center`;
 const VerticalSpacer = tw.div`mt-10 w-full`
 
 const Column = styled.div`
-  ${tw`md:w-1/2 lg:w-1/3 max-w-sm`}
+  ${tw`md:w-1/2 lg:w-1/3`}
 `;
 
 const Card = styled.div`
-  ${tw`flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left h-full mx-4 px-2 py-8`}
+  ${tw`flex flex-col items-start text-left h-full mx-4 px-2 py-8`}
   .imageContainer {
-    ${tw`border text-center rounded-full p-5 flex-shrink-0`}
+    ${tw`bg-gray-200 text-center rounded-md p-5 flex-shrink-0`}
     img {
       ${tw`w-6 h-6`}
     }
   }
 
   .textContainer {
-    ${tw`sm:ml-4 mt-4 sm:mt-2`}
+    ${tw`mt-6`}
   }
 
   .title {
@@ -99,8 +99,9 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
               </span>
               <span className="textContainer">
                 <span className="title">Budgeting</span>
-                <p className="description">
-                We monitor your spending so you don’t have to and ensure you’re saving enough to reach your financial goals                </p>
+                  <p className="description">
+                    We monitor your spending so you don’t have to and ensure you’re saving enough to reach your financial goals.
+                  </p>
               </span>
             </Card>
         </Column>
@@ -112,7 +113,8 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
               <span className="textContainer">
                 <span className="title">Saving</span>
                 <p className="description">
-                We make sure every dollar you save goes to the highest priority place whether that means paying off debt, saving for retirement, or building an emergency savings fund                </p>
+                  We make sure every dollar you save goes to the highest priority place whether that means paying off debt, saving for retirement, or building an emergency savings fund.
+                </p>
               </span>
             </Card>
         </Column>
@@ -124,7 +126,8 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
               <span className="textContainer">
                 <span className="title">Investing</span>
                 <p className="description">
-                We make sure you pick the best investments and account types to maximize the chances of reaching your goals                </p>
+                  We make sure you pick the best investments and account types to maximize the chances of reaching your goals.
+                </p>
               </span>
             </Card>
         </Column>
