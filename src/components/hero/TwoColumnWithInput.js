@@ -23,6 +23,7 @@ const RightColumn = tw.div`relative mt-12 lg:w-1/2 lg:mt-0 flex-1 flex flex-col 
 const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`;
 const Subheading = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
 const SignupText = tw.p`my-3 text-gray-500 text-base`;
+const ErrorText = tw.p`my-3 text-red-500 text-base`;
 
 const Actions = styled.div`
   ${tw`relative max-w-md lg:mx-0`}
@@ -30,7 +31,7 @@ const Actions = styled.div`
     ${tw`sm:pr-48 pl-4 py-4 sm:py-5 rounded-md border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
   }
   button {
-    ${tw`w-full disabled:hover:bg-gray-800 disabled:cursor-not-allowed disabled:bg-gray-800  sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-md py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
+    ${tw`w-full disabled:bg-primary-900 sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-md py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
   }
 `;
 
@@ -77,7 +78,7 @@ function validateEmail(email) {
 class Hero extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '', didSignUp: false };
+    this.state = { value: '', didSignUp: false, errorText: null };
     this.handleChange = this.handleChange.bind(this);
     this.saveToFirebase = this.saveToFirebase.bind(this);
   }
@@ -90,12 +91,12 @@ class Hero extends React.Component {
     
       firebase.database().ref('signups').push().set(emailObject)
           .then((snapshot) => {
-            this.setState({didSignUp: true });
-            // success(); // some success method
+            this.setState({didSignUp: true, errorText: null});
           }, function(error) {
               console.log('error' + error);
-              // error(); // some error method
           });
+    } else {
+      this.setState({errorText: "Please enter in a valid email."});
     }
   }
 
@@ -121,6 +122,10 @@ class Hero extends React.Component {
                 We’re currently in beta. Sign up to get early access.
               </SignupText>
 
+              <ErrorText>
+                {this.state.errorText}
+              </ErrorText>
+
               {this.state.didSignUp
               ? (
               <Subheading>
@@ -130,9 +135,7 @@ class Hero extends React.Component {
               : (
               <Actions>
                 <input onChange={this.handleChange} type="text" placeholder="Your email address" />
-                
-                {/* TODO: This needs to be disabled when an invalid email is set... usually disabled = works... */}
-                <button disabled={!validateEmail(this.state.value)} onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
+                <button onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
               </Actions>
               )}
               
