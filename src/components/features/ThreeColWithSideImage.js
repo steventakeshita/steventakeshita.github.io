@@ -23,10 +23,15 @@ import { FaChartPie, FaPiggyBank, FaChartLine } from "react-icons/fa";
 const Container = tw.div`relative`;
 
 const ThreeColumnContainer = styled.div`
-  ${tw`flex flex-col items-center md:items-stretch md:flex-row flex-wrap md:justify-center max-w-screen-lg mx-auto py-20 md:py-24`}
+  ${tw`flex flex-col items-center md:items-stretch md:flex-row flex-wrap md:justify-center max-w-screen-lg mx-auto py-5 md:py-5`}
 `;
 const Subheading = tw(SubheadingBase)`mb-4`;
-const Heading = tw(SectionHeading)`w-full`;
+// const Heading = tw(SectionHeading)`w-full`;
+const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`
+
+let iconStyles = { color: "#6602ee" };
+
+
 const Description = tw(SectionDescription)`w-full text-center`;
 
 const VerticalSpacer = tw.div`mt-10 w-full`
@@ -90,7 +95,7 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
         <Column key={1}>
             <Card>
               <span className="imageContainer">
-                <FaChartPie size={42}></FaChartPie>
+                <FaChartPie style={iconStyles} size={42}></FaChartPie>
               </span>
               <span className="textContainer">
                 <span className="title">Budgeting</span>
@@ -102,10 +107,10 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
         <Column key={2}>
             <Card>
               <span className="imageContainer">
-                <FaPiggyBank size={42}></FaPiggyBank>
+                <FaPiggyBank style={iconStyles} size={42}></FaPiggyBank>
               </span>
               <span className="textContainer">
-                <span className="title">Allocating Savings</span>
+                <span className="title">Saving</span>
                 <p className="description">
                 We make sure every dollar you save goes to the highest priority place whether that means paying off debt, saving for retirement, or building an emergency savings fund                </p>
               </span>
@@ -114,7 +119,7 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
         <Column key={3}>
             <Card>
               <span className="imageContainer">
-                <FaChartLine size={42}></FaChartLine>
+                <FaChartLine style={iconStyles} size={42}></FaChartLine>
               </span>
               <span className="textContainer">
                 <span className="title">Investing</span>

@@ -16,7 +16,7 @@ import DesignIllustration from "../../images/LetsGetStartediPhone.png";
 import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
 
 const Container = tw.div`relative`;
-const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
+const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-5 md:py-5`;
 const LeftColumn = tw.div`relative lg:w-5/12 text-center max-w-lg mx-auto lg:max-w-none lg:text-left`;
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex-1 flex flex-col justify-center lg:self-end`;
 
@@ -67,6 +67,12 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+// validate email before submitting to firebase.
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
 
 class Hero extends React.Component {
   constructor(props) {
@@ -77,18 +83,20 @@ class Hero extends React.Component {
   }
 
   saveToFirebase(email) {
-    var emailObject = {
-        email: email
-    };
-  
-    firebase.database().ref('signups').push().set(emailObject)
-        .then((snapshot) => {
-          this.setState({didSignUp: true });
-          // success(); // some success method
-        }, function(error) {
-            console.log('error' + error);
-            // error(); // some error method
-        });
+    if (validateEmail(email)) {
+      var emailObject = {
+          email: email
+      };
+    
+      firebase.database().ref('signups').push().set(emailObject)
+          .then((snapshot) => {
+            this.setState({didSignUp: true });
+            // success(); // some success method
+          }, function(error) {
+              console.log('error' + error);
+              // error(); // some error method
+          });
+    }
   }
 
   handleChange(event) {
@@ -122,7 +130,9 @@ class Hero extends React.Component {
               : (
               <Actions>
                 <input onChange={this.handleChange} type="text" placeholder="Your email address" />
-                <button onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
+                
+                {/* TODO: This needs to be disabled when an invalid email is set... usually disabled = works... */}
+                <button disabled={validateEmail(this.state.value)} onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
               </Actions>
               )}
               
