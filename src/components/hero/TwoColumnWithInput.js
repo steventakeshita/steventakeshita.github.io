@@ -30,7 +30,7 @@ const Actions = styled.div`
     ${tw`sm:pr-48 pl-4 py-4 sm:py-5 rounded-md border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
   }
   button {
-    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-md py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
+    ${tw`w-full disabled:hover:bg-gray-800 disabled:cursor-not-allowed disabled:bg-gray-800  sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-md py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
   }
 `;
 
@@ -132,7 +132,7 @@ class Hero extends React.Component {
                 <input onChange={this.handleChange} type="text" placeholder="Your email address" />
                 
                 {/* TODO: This needs to be disabled when an invalid email is set... usually disabled = works... */}
-                <button disabled={validateEmail(this.state.value)} onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
+                <button disabled={!validateEmail(this.state.value)} onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
               </Actions>
               )}
               

@@ -696,6 +696,9 @@ module.exports = {
     boxSizing: ['responsive'],
     cursor: ['responsive'],
     display: ['responsive'],
+    extend: {
+      opacity: ({ after }) => after(['disabled'])
+    },
     fill: ['responsive'],
     flex: ['responsive'],
     flexDirection: ['responsive'],
