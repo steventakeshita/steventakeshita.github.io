@@ -12,6 +12,9 @@ import "firebase/auth";
 import "firebase/database";
 
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
+import ReactModalAdapter from "../../helpers/ReactModalAdapter.js";
+import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+
 import DesignIllustration from "../../images/LetsGetStartediPhone.png";
 import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
 
@@ -21,7 +24,9 @@ const LeftColumn = tw.div`relative justify-center max-w-screen-md lg:w-1/2 text-
 const RightColumn = tw.div`relative mt-12 lg:w-1/2 lg:mt-0 flex-1 flex flex-col justify-center`;
 
 const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`;
-const Subheading = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
+const SubheadingTitle = tw.p`my-5 text-base text-3xl md:text-3xl lg:text-4xl xl:text-5xl`;
+
+const Subheading = tw.p`my-5 lg:my-5 text-base xl:text-lg`;
 const SignupText = tw.p`my-3 text-gray-500 text-base`;
 const ErrorText = tw.p`my-3 text-red-500 text-base`;
 
@@ -34,6 +39,20 @@ const Actions = styled.div`
     ${tw`w-full disabled:bg-primary-900 sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-md py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
   }
 `;
+
+// For the  modal
+const StyledModal = styled(ReactModalAdapter)`
+  &.mainHeroModal__overlay {
+    ${tw`fixed inset-0 z-20`}
+  }
+  &.mainHeroModal__content {
+    ${tw`h-48 w-11/12 md:max-w-md mx-auto my-auto rounded shadow-lg z-50 overflow-y-auto     absolute inset-0 flex justify-center items-center rounded-lg bg-gray-400 outline-none`}
+  }
+  .content {
+    ${tw`w-full justify-center px-2`}
+  }
+`;
+const CloseModalButton = tw.button`absolute top-0 right-0 mt-4 mr-4 hocus:text-primary-500`;
 
 const IllustrationContainer = tw.div`flex justify-center items-center`;
 
@@ -78,9 +97,10 @@ function validateEmail(email) {
 class Hero extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '', didSignUp: false, errorText: null };
+    this.state = { value: '', didSignUp: false, errorText: null, modalIsOpen: true };
     this.handleChange = this.handleChange.bind(this);
     this.saveToFirebase = this.saveToFirebase.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   saveToFirebase(email) {
@@ -91,7 +111,7 @@ class Hero extends React.Component {
     
       firebase.database().ref('signups').push().set(emailObject)
           .then((snapshot) => {
-            this.setState({didSignUp: true, errorText: null});
+            this.setState({didSignUp: true, errorText: null, modalIsOpen: true});
           }, function(error) {
               console.log('error' + error);
           });
@@ -103,6 +123,10 @@ class Hero extends React.Component {
   handleChange(event) {
     this.setState({value: event.target.value});
   }
+
+  toggleModal() {
+    this.setState({modalIsOpen: !this.state.modalIsOpen});
+  } 
 
   render() {
   
@@ -124,9 +148,25 @@ class Hero extends React.Component {
 
               {this.state.didSignUp
               ? (
-              <Subheading>
-                Thank you for signing up!
-              </Subheading>
+                <StyledModal
+                closeTimeoutMS={300}
+                className="mainHeroModal"
+                isOpen={this.state.modalIsOpen}
+                onRequestClose={this.toggleModal}
+                shouldCloseOnOverlayClick={true}
+              >
+                <CloseModalButton onClick={this.toggleModal}>
+                  <CloseIcon tw="w-6 h-6" />
+                </CloseModalButton>
+                <div className="content">
+                  <SubheadingTitle>
+                  🎉🎉🎉
+                  </SubheadingTitle>
+                  <Subheading>
+                  Thank you for joining Percy Finance! We can't wait to revolutionize financial advising together.
+                  </Subheading>
+                </div>
+              </StyledModal>
               )
               : (
               <Actions>
