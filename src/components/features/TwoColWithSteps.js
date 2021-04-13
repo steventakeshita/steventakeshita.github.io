@@ -10,12 +10,12 @@ const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row justify-between max-w-screen-xl mx-auto py-5 md:py-5 items-center`;
 const ImageColumn = tw.div`relative items-end lg:w-2/5`;
 const TextColumn = styled.div(props => [
-  tw`max-w-screen-md lg:w-3/5 mt-16`,
+  tw`max-w-screen-md lg:w-3/5 mt-8`,
   props.textOnLeft ? tw`md:mr-12 lg:mr-16 md:order-first` : tw`md:ml-12 lg:ml-16 order-first lg:order-last`
 ]);
 
 const IllustrationContainer = tw.div`flex justify-center items-center mt-12 lg:mt-0`;
-const Image = tw.img`w-1/2 lg:w-2/3`;
+const Image = tw.img`w-3/5 md:w-1/4 lg:w-2/3`;
 
 const DecoratorBlob = styled(SvgDotPattern)(() => [
   tw`w-20 h-20 absolute right-0 bottom-0 transform translate-x-1/2 translate-y-1/2 fill-current text-primary-500 -z-10`

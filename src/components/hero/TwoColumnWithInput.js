@@ -141,7 +141,7 @@ class Hero extends React.Component {
             </LeftColumn>
             <RightColumn>
               <IllustrationContainer>
-                <img tw="w-1/2" src={DesignIllustration} alt="Design Illustration" />
+                <img tw="w-3/5 md:w-1/4 lg:w-1/2" src={DesignIllustration} alt="Design Illustration" />
               </IllustrationContainer>
             </RightColumn>
           </TwoColumn>
