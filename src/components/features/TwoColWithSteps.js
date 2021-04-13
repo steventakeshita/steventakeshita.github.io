@@ -15,7 +15,7 @@ const TextColumn = styled.div(props => [
 ]);
 
 const IllustrationContainer = tw.div`flex justify-center items-center mt-12 lg:mt-0`;
-const Image = tw.img`w-3/5 md:w-1/4 lg:w-2/3`;
+const Image = tw.img`w-3/4 md:w-1/3 lg:w-2/3`;
 
 const DecoratorBlob = styled(SvgDotPattern)(() => [
   tw`w-20 h-20 absolute right-0 bottom-0 transform translate-x-1/2 translate-y-1/2 fill-current text-primary-500 -z-10`
