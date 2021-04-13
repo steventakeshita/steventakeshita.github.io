@@ -83,9 +83,16 @@ export default () => {
               "While financial advisors don’t like to admit it, they rely heavily on software for planning. This means that even if you were to hire an expensive human advisor, their recommendations would be based almost entirely on software. You should trust our software because our team has experience managing Princeton’s $26 billion endowment, working at J.P. Morgan, and building software at Microsoft.",
           },
           {
+            question: "Shouldn't I be saving money instead of spending on financial advice?",
+            answer: `Just like investing towards your fitness, mental health, or nutrition goals, Percy is an investment in your financial well-being. Just as you are much more likely to get in great physical shape with a personal trainer, you are much more likely to get in great financial shape with Percy. There are numerous studies that demonstrate the value a financial advisor can add, and most agree it's 3% in growth per year - while this might not seem like a lot initially, it could easily translate into hundreds of thousands of dollars over your lifetime.\u00B2`,
+          },
+          {
             question: "Will I have access to support should I encounter an issue?",
             answer: `As a Percy member, you will have access to our technical support team via email and text, and we usually respond within a few hours.`,
           },
+
+
+          
         ]}
       />
       <Footer />
