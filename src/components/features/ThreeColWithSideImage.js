@@ -114,7 +114,7 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
               <span className="textContainer">
                 <span className="title">Saving</span>
                 <p className="description">
-                  We make sure every dollar you save goes to the highest priority place whether that means paying off debt, saving for retirement, or building an emergency savings fund.
+                  We make sure every dollar you save goes to the account that's best for you whether that means paying off debt, saving for retirement, building an emergency savings fund, etc.
                 </p>
               </span>
             </Card>
@@ -127,7 +127,7 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
               <span className="textContainer">
                 <span className="title">Investing</span>
                 <p className="description">
-                  We make sure you pick the best investments and account types to maximize the chances of reaching your goals.
+                  We make sure you pick the best investments and account types (to save you taxes) to maximize the chances of reaching your goals.
                 </p>
               </span>
             </Card>

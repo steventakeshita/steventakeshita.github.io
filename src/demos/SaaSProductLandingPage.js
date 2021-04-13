@@ -34,7 +34,7 @@ export default () => {
             It's time to democratize financial advice.
           </>
         }
-        subheading1={"While most people want help with their finances, only 3 in 10 Americans have a financial advisor. What gives? The average financial advisor charges over $200/month! But it gets worse. For $200/month, you would expect VIP treatment. The reality is that financial advisors rely heavily on software and are often just relaying the software’s suggestions to you."}
+        subheading1={"With a quality financial advisor, you could grow your money up to 3% more each year (this could translate to hundreds of thousands of dollars over your lifetime).\u00B2 Yet only 3 in 10 Americans have a financial advisor.\u00B3 What gives? The average financial advisor charges over $200/month!\u2074 But it gets worse. For $200/month, you would expect VIP treatment. The reality is that financial advisors rely heavily on software and are often just relaying the software’s suggestions to you."}
         heading2={
           <>
             Let's cut out the middleman.
@@ -68,10 +68,6 @@ export default () => {
             answer: `Percy is an app that offers you unbiased, quality financial advice for a low monthly price. We’ll help you answer your burning financial questions like “Am I spending too much?”, “What’s the best use of my savings?”, and “How should I invest my retirement account?”`,
           },
           {
-            question: "Will I get access to a human financial advisor?",
-            answer: `The only way we can afford to offer our incredibly low fees is by not having human advisors available to our clients, and we don’t think you’re missing out. Therefore, we are not an appropriate service for someone who doesn’t like digital-first experiences. That being said, you can rest assured we will always be available should you encounter a problem with our service, and you will never suffer economic harm if we created the problem.`,
-          },
-          {
             question: "Is there a free option?",
             answer:
               "We are big believers in affordable financial advice, but we do not believe in free advice. Why not? Because it’s too good to be true. Anyone who’s giving you free financial advice is likely trying to sell you something else that will end up costing you more in the long run. By paying a low fee for Percy, you will never get any ads, and more importantly, we will never try to suggest financial products for you that aren’t in your best interest.",
@@ -85,7 +81,11 @@ export default () => {
             question: "Why should I trust software to help me manage my finances?",
             answer:
               "While financial advisors don’t like to admit it, they rely heavily on software for planning. This means that even if you were to hire an expensive human advisor, their recommendations would be based almost entirely on software. You should trust our software because our team has experience managing Princeton’s $26 billion endowment, working at J.P. Morgan, and building software at Microsoft.",
-          }
+          },
+          {
+            question: "Will I have access to support should I encounter an issue?",
+            answer: `As a Percy member, you will have access to our technical support team via email and text, and we usually respond within a few hours.`,
+          },
         ]}
       />
       <Footer />

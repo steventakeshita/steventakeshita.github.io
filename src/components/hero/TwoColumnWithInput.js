@@ -116,7 +116,7 @@ class Hero extends React.Component {
                 Helping you expertly manage your finances.
               </Heading>
               <Subheading>
-                Percy advises you on budgeting, allocating your savings, investing, taxes, and more for only $19/month - over 10 times cheaper than the average financial advisor!
+                {"Percy advises you on budgeting, allocating your savings, investing, taxes, and more for only $19/month - over 10 times cheaper than the average financial advisor!\u00B9"}
               </Subheading>
               <SignupText>
                 We’re currently in beta. Sign up to get early access.
