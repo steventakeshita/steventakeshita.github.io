@@ -96,7 +96,7 @@ class Hero extends React.Component {
               console.log('error' + error);
           });
     } else {
-      this.setState({errorText: "Please enter in a valid email."});
+      this.setState({errorText: "Please enter a valid email"});
     }
   }
 
@@ -116,15 +116,11 @@ class Hero extends React.Component {
                 Helping you expertly manage your finances.
               </Heading>
               <Subheading>
-                {"Percy advises you on budgeting, allocating your savings, investing, taxes, and more for only $19/month - over 10 times cheaper than the average financial advisor!\u00B9"}
+                {"Percy advises you on budgeting, allocating your savings, investing, taxes, and more for only $19/month - over 10 times cheaper than the average financial advisor.\u00B9"}
               </Subheading>
               <SignupText>
                 We’re currently in beta. Sign up to get early access.
               </SignupText>
-
-              <ErrorText>
-                {this.state.errorText}
-              </ErrorText>
 
               {this.state.didSignUp
               ? (
@@ -138,11 +134,14 @@ class Hero extends React.Component {
                 <button onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
               </Actions>
               )}
+              <ErrorText>
+                {this.state.errorText}
+              </ErrorText>
               
             </LeftColumn>
             <RightColumn>
               <IllustrationContainer>
-                <img tw="h-144" src={DesignIllustration} alt="Design Illustration" />
+                <img tw="w-1/2" src={DesignIllustration} alt="Design Illustration" />
               </IllustrationContainer>
             </RightColumn>
           </TwoColumn>

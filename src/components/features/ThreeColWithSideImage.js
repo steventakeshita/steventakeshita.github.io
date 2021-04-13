@@ -64,7 +64,7 @@ const Card = styled.div`
 
 
 const DecoratorBlob = styled(SvgDecoratorBlob3)`
-  ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-25 transform translate-x-32 translate-y-48 `}
+  ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-5 transform translate-x-32 translate-y-0 `}
 `;
 
 export default ({ cards = null, heading = "Amazing Features", subheading = "Features", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }) => {
