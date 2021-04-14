@@ -10,6 +10,8 @@ import firebase from "firebase/app";
 import "firebase/storage"
 import "firebase/auth";
 import "firebase/database";
+import { FaCheckCircle } from "react-icons/fa";
+
 
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
 import ReactModalAdapter from "../../helpers/ReactModalAdapter.js";
@@ -24,7 +26,7 @@ const LeftColumn = tw.div`relative justify-center max-w-screen-md lg:w-1/2 text-
 const RightColumn = tw.div`relative mt-12 lg:w-1/2 lg:mt-0 flex-1 flex flex-col justify-center`;
 
 const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`;
-const SubheadingTitle = tw.p`my-5 text-base text-3xl md:text-3xl lg:text-4xl xl:text-5xl`;
+const SubheadingTitle = tw.p`items-center text-center  text-3xl md:text-3xl lg:text-4xl xl:text-5xl`;
 
 const Subheading = tw.p`my-5 lg:my-5 text-base xl:text-lg`;
 const SignupText = tw.p`my-3 text-gray-500 text-base`;
@@ -46,10 +48,10 @@ const StyledModal = styled(ReactModalAdapter)`
     ${tw`fixed inset-0 z-20`}
   }
   &.mainHeroModal__content {
-    ${tw`h-48 w-11/12 md:max-w-md mx-auto my-auto rounded shadow-lg z-50 overflow-y-auto     absolute inset-0 flex justify-center items-center rounded-lg bg-gray-400 outline-none`}
+    ${tw`h-48 lg:max-w-lg w-11/12 md:max-w-md mx-auto my-auto rounded shadow-2xl z-50 overflow-y-auto     absolute inset-0 flex justify-center items-center rounded-lg bg-gray-400 outline-none`}
   }
   .content {
-    ${tw`w-full justify-center px-2`}
+    ${tw`w-full justify-center  px-5`}
   }
 `;
 const CloseModalButton = tw.button`absolute top-0 right-0 mt-4 mr-4 hocus:text-primary-500`;
@@ -93,11 +95,12 @@ function validateEmail(email) {
   return re.test(email);
 }
 
+let iconStyles = { color: "#6602ee" };
 
 class Hero extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '', didSignUp: false, errorText: null, modalIsOpen: true };
+    this.state = { value: '', didSignUp: true, errorText: null, modalIsOpen: true };
     this.handleChange = this.handleChange.bind(this);
     this.saveToFirebase = this.saveToFirebase.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
@@ -108,10 +111,12 @@ class Hero extends React.Component {
       var emailObject = {
           email: email
       };
+
+      this.setState({value: ''});
     
       firebase.database().ref('signups').push().set(emailObject)
           .then((snapshot) => {
-            this.setState({didSignUp: true, errorText: null, modalIsOpen: true});
+            this.setState({value: '', didSignUp: true, errorText: null, modalIsOpen: true});
           }, function(error) {
               console.log('error' + error);
           });
@@ -129,7 +134,36 @@ class Hero extends React.Component {
   } 
 
   render() {
-  
+    const renderModal = () => {
+      {
+        if (this.state.didSignUp) {
+          return (
+            <StyledModal
+            closeTimeoutMS={300}
+            className="mainHeroModal"
+            isOpen={this.state.modalIsOpen}
+            onRequestClose={this.toggleModal}
+            shouldCloseOnOverlayClick={true}
+            >
+            <CloseModalButton onClick={this.toggleModal}>
+              <CloseIcon tw="w-6 h-6" />
+            </CloseModalButton>
+            <div className="content">
+              <SubheadingTitle>
+              <span className="imageContainer">
+                <FaCheckCircle style={iconStyles} size={42}></FaCheckCircle>
+              </span>
+              </SubheadingTitle>
+              <Subheading>
+              Thank you for signing up for early access! We can't wait to revolutionize financial advising together.
+              </Subheading>
+            </div>
+          </StyledModal>
+          )
+        }
+      }
+    }
+
     return (
       <>
         <Header  />
@@ -145,35 +179,11 @@ class Hero extends React.Component {
               <SignupText>
                 We’re currently in beta. Sign up to get early access.
               </SignupText>
-
-              {this.state.didSignUp
-              ? (
-                <StyledModal
-                closeTimeoutMS={300}
-                className="mainHeroModal"
-                isOpen={this.state.modalIsOpen}
-                onRequestClose={this.toggleModal}
-                shouldCloseOnOverlayClick={true}
-              >
-                <CloseModalButton onClick={this.toggleModal}>
-                  <CloseIcon tw="w-6 h-6" />
-                </CloseModalButton>
-                <div className="content">
-                  <SubheadingTitle>
-                  🎉🎉🎉
-                  </SubheadingTitle>
-                  <Subheading>
-                  Thank you for joining Percy Finance! We can't wait to revolutionize financial advising together.
-                  </Subheading>
-                </div>
-              </StyledModal>
-              )
-              : (
+              {renderModal()}
               <Actions>
-                <input onChange={this.handleChange} type="text" placeholder="Your email address" />
+                <input onChange={this.handleChange} value={this.state.value} type="text" placeholder="Your email address" />
                 <button onClick={() => this.saveToFirebase(this.state.value)}>Count Me In!</button>
               </Actions>
-              )}
               <ErrorText>
                 {this.state.errorText}
               </ErrorText>

@@ -3,6 +3,9 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    backgroundOpacity: {
+      '50': '0.5',
+     },
     screens: {
       sm: '640px',
       md: '768px',
@@ -684,6 +687,7 @@ module.exports = {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundOpacity: ['active'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
