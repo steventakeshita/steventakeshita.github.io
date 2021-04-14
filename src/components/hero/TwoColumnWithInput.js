@@ -100,7 +100,7 @@ let iconStyles = { color: "#6602ee" };
 class Hero extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '', didSignUp: true, errorText: null, modalIsOpen: true };
+    this.state = { value: '', didSignUp: true, errorText: null, modalIsOpen: false };
     this.handleChange = this.handleChange.bind(this);
     this.saveToFirebase = this.saveToFirebase.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
