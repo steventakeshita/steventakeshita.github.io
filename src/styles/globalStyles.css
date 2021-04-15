@@ -3,6 +3,7 @@
     transition: transform 300ms ease-in-out;
     transition-delay: 100ms;
     transform: scale(0);
+    background-color:rgba(0, 0, 0, 0.5);
     /* transform: translateY(-150%); */
 }
 
